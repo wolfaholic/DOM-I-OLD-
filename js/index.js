@@ -41,5 +41,15 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
-const navColor = document.getElementsByTagName("a");
+let navi = document.getElementById("a");
+navi.setAttribute('src', siteContent["a"]["nav-item-1"])
+
+const navColor = document.querySelectorAll("a");
+navColor.forEach( element => {
+  element.style.color = "black";
+});
+
+const newNav = document.querySelector("nav");
+newNav.prepend(Home);
+newNav.append(Store);
 
