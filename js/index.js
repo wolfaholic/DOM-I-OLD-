@@ -58,16 +58,24 @@ naviOne[3].textContent= siteContent["nav"]['nav-item-4'];
 naviOne[4].textContent= siteContent["nav"]['nav-item-5'];
 naviOne[5].textContent= siteContent["nav"]['nav-item-6'];
 
+
+
+//Task 3 Append and Prepend in the Nav Menue
+let parentNav = document.querySelector("nav");
+let newLink = document.createElement("a");
+newLink.textContent= "Home";
+let secondLink = document.createElement("a");
+secondLink.textContent= "Store";
+parentNav.appendChild(secondLink);
+parentNav.prepend(newLink);
+
 //Task 3: Navigation Color Adjustment to Black
 const navColor = document.querySelectorAll("a");
 navColor.forEach( element => {
-  element.style.color = "black";
+  element.style.color = "green";
 });
 
-//Task 3 Append and Prepend in the Nav Menue
-// const newNav = document.querySelector("a");
-// newNav.prependChild(Home);
-// newNav.appendChild(Store);
+ 
 
 //Call To Action
 let actionHeader = document.querySelector(".cta-text h1");
@@ -78,7 +86,37 @@ actionButton.textContent= siteContent["cta"]["button"];
 
 
 //main content
-let mainContent = document.querySelector(".top-content .text-content");
-mainContent.textContent= siteContent["main-content"]["features-h4"];
+let mainContent = document.querySelectorAll(".top-content .text-content h4");
+mainContent[0].textContent= siteContent["main-content"]["features-h4"];
+mainContent[1].textContent= siteContent["main-content"]["about-h4"];
 
+let paragraphContent = document.querySelectorAll(".top-content .text-content p");
+paragraphContent[0].textContent= siteContent["main-content"]["features-content"];
+paragraphContent[1].textContent= siteContent["main-content"]["about-content"];
 
+// Bottom Content
+ 
+let bottomTitle = document.querySelectorAll(".bottom-content .text-content h4");
+bottomTitle[0].textContent= siteContent["main-content"]["services-h4"];
+bottomTitle[1].textContent= siteContent["main-content"]["product-h4"];
+bottomTitle[2].textContent= siteContent["main-content"]["vision-h4"];
+
+let bottomContent = document.querySelectorAll(".bottom-content .text-content p");
+bottomContent[0].textContent= siteContent["main-content"]["services-content"];
+bottomContent[1].textContent= siteContent["main-content"]["product-content"];
+bottomContent[2].textContent= siteContent["main-content"]["vision-content"];
+
+//Contact Section
+
+let contactHead = document.querySelector(".contact h4");
+contactHead.textContent= siteContent["contact"]["contact-h4"];
+
+let contactInfo = document.querySelectorAll(".contact p");
+contactInfo[0].textContent= siteContent["contact"]["address"];
+contactInfo[1].textContent= siteContent["contact"]["phone"];
+contactInfo[2].textContent= siteContent["contact"]["email"];
+
+//Footer
+
+let footer = document.querySelector("footer p");
+footer.textContent= siteContent["footer"]["copyright"];
