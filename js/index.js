@@ -6,7 +6,7 @@ const siteContent = {
     "nav-item-4": "Features",
     "nav-item-5": "About",
     "nav-item-6": "Contact",
-    "img-src": "/img/logo.png"
+    "img-src": "img/logo.png"
   },
   "cta": {
     "h1": "DOM Is Awesome",
@@ -38,18 +38,47 @@ const siteContent = {
 };
 
 // Example: Update the img src for the logo
+
+//Images
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
-let navi = document.getElementById("a");
-navi.setAttribute('src', siteContent["a"]["nav-item-1"])
+let ctaImage = document.getElementById("cta-img");
+ctaImage.setAttribute('src', siteContent["cta"]["img-src"]);
 
+let midImage = document.getElementById("middle-img");
+midImage.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
+
+//Navigation
+let naviOne = document.querySelectorAll("a");
+naviOne[0].textContent= siteContent["nav"]['nav-item-1'];
+naviOne[1].textContent= siteContent["nav"]['nav-item-2'];
+naviOne[2].textContent= siteContent["nav"]['nav-item-3'];
+naviOne[3].textContent= siteContent["nav"]['nav-item-4'];
+naviOne[4].textContent= siteContent["nav"]['nav-item-5'];
+naviOne[5].textContent= siteContent["nav"]['nav-item-6'];
+
+//Task 3: Navigation Color Adjustment to Black
 const navColor = document.querySelectorAll("a");
 navColor.forEach( element => {
   element.style.color = "black";
 });
 
-const newNav = document.querySelector("nav");
-newNav.prepend(Home);
-newNav.append(Store);
+//Task 3 Append and Prepend in the Nav Menue
+// const newNav = document.querySelector("a");
+// newNav.prependChild(Home);
+// newNav.appendChild(Store);
+
+//Call To Action
+let actionHeader = document.querySelector(".cta-text h1");
+actionHeader.textContent= siteContent["cta"]["h1"];
+
+let actionButton = document.querySelector(".cta-text button");
+actionButton.textContent= siteContent["cta"]["button"];
+
+
+//main content
+let mainContent = document.querySelector(".top-content .text-content");
+mainContent.textContent= siteContent["main-content"]["features-h4"];
+
 
